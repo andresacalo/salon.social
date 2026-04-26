@@ -1,0 +1,19 @@
+*** Begin Patch
+*** Update File: app/models/Conexion.php
+@@
+-        $schema = file_get_contents(__DIR__ . '/../database/salon_social.sql');
+-        if (!$schema) {
+-            http_response_code(500);
+-            exit('No se pudo cargar el schema');
+-        }
++        $schemaPath = realpath(__DIR__ . '/../database/salon_social.sql');
++        if (!$schemaPath || !is_readable($schemaPath)) {
++            http_response_code(500);
++            exit('No se pudo cargar el schema en ' . (__DIR__ . '/../database/salon_social.sql'));
++        }
++        $schema = file_get_contents($schemaPath);
++        if ($schema === false) {
++            http_response_code(500);
++            exit('No se pudo leer el schema');
++        }
+*** End Patch
