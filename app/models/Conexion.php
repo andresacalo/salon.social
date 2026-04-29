@@ -42,8 +42,24 @@ class Conexion
             http_response_code(500);
             exit('No se pudo seleccionar DB: ' . $db->error);
         }
+        self::ensureRequiredColumns($db);
         self::$db = $db;
         return $db;
+    }
+
+    private static function ensureRequiredColumns(mysqli $db): void
+    {
+        $columns = [
+            'phone' => "ALTER TABLE users ADD COLUMN phone VARCHAR(20) DEFAULT NULL",
+            'whatsapp' => "ALTER TABLE users ADD COLUMN whatsapp VARCHAR(20) DEFAULT NULL"
+        ];
+
+        foreach ($columns as $column => $query) {
+            $result = $db->query("SHOW COLUMNS FROM users LIKE '{$column}'");
+            if ($result && $result->num_rows === 0) {
+                $db->query($query);
+            }
+        }
     }
 }
 ?>
