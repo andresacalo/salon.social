@@ -23,7 +23,85 @@ class SettingsPanel {
                 dark: 'Oscuro',
                 light: 'Claro',
                 spanish: 'Español',
-                english: 'English'
+                english: 'English',
+                brand: '🏰 Salón Social',
+                dashboard: '📊 Dashboard',
+                myReservations: '📅 Mis reservas',
+                admin: '✅ Admin',
+                notifications: '📧 Notificaciones',
+                inventory: '📦 Inventario',
+                users: '👥 Usuarios',
+                logout: '🚪 Salir',
+                login: '🔐 Ingresar',
+                welcome: '🏰 Bienvenido',
+                loginSubtitle: 'Accede al Sistema de Reservas',
+                email: '📧 Correo Electrónico',
+                password: '🔐 Contraseña',
+                submitLogin: '🔓 Entrar',
+                emailPlaceholder: 'tu@correo.com',
+                passwordPlaceholder: 'Tu contraseña',
+                footer: '✨ Salon Social - Sistema de Reservas 2024',
+                siteCopyright: 'Sistema Salón Social © 2024',
+                dashboardStatsTitle: '📊 Estado de Reservas',
+                upcomingReservationsTitle: '🚨 Próximas Reservas (Semáforo)',
+                noUpcoming: '😴 Nada próximo por el momento.',
+                date: '📆 Fecha',
+                requester: '👤 Solicitante',
+                status: '✅ Estado',
+                semaphore: '⏱️ Semáforo',
+                newReservationTitle: '📅 Nueva Reserva',
+                eventDate: '📆 Fecha del Evento',
+                startTime: '🕐 Hora de Inicio',
+                endTime: '🕑 Hora de Fin',
+                eventTitle: '🎯 Título del Evento',
+                attendees: '👥 Número de Asistentes',
+                bookButton: '✅ Reservar',
+                myReservationsTitle: '📋 Mis Reservas',
+                inventoryTitle: 'Inventario',
+                createItemTitle: 'Crear ítem',
+                nameLabel: 'Nombre',
+                unitLabel: 'Unidad',
+                notesLabel: 'Notas',
+                saveButton: 'Guardar',
+                movementTitle: 'Movimiento',
+                itemLabel: 'Ítem',
+                quantityLabel: 'Cantidad',
+                typeLabel: 'Tipo',
+                reasonLabel: 'Motivo',
+                registerButton: 'Registrar',
+                recentMovementsTitle: 'Últimos movimientos',
+                item: 'Ítem',
+                qty: 'Cant.',
+                user: 'Usuario',
+                entry: 'Entrada',
+                exit: 'Salida',
+                usersSystemTitle: '👥 Usuarios del Sistema',
+                rol: 'Rol',
+                state: 'Estado',
+                action: 'Acción',
+                createUserTitle: '➕ Crear Usuario',
+                fullName: '👤 Nombre Completo',
+                roleLabel: '🎭 Rol',
+                createUserButton: '✅ Crear Usuario',
+                resident: '👤 Residente',
+                supervisor: '⭐ Supervisor',
+                adminRole: '👑 Admin',
+                active: '✓ Activo',
+                inactive: '✗ Inactivo',
+                channelSelect: '📡 Selecciona canal:',
+                helpText: 'Desde aquí puedes enviar notificaciones a los usuarios sobre sus reservas por múltiples canales:',
+                emailOption: '📧 Email',
+                whatsappOption: '💬 WhatsApp',
+                smsOption: '📞 SMS',
+                notificationsCenterTitle: '🔔 Centro de Notificaciones',
+                reservationsCount: 'Reservas',
+                confirmAction: '📧 Confirmación',
+                approvalAction: '✅ Aprobada',
+                rejectionAction: '❌ Rechazada',
+                noNotifications: 'No hay reservas para notificar.',
+                downloadCsv: '📊 Descargar Reporte CSV',
+                approveReservationsTitle: '✅ Aprobar Reservas',
+                actions: '⚙️ Acciones'
             },
             en: {
                 settings: 'Settings',
@@ -39,7 +117,85 @@ class SettingsPanel {
                 dark: 'Dark',
                 light: 'Light',
                 spanish: 'Español',
-                english: 'English'
+                english: 'English',
+                brand: '🏰 Salon Social',
+                dashboard: '📊 Dashboard',
+                myReservations: '📅 My reservations',
+                admin: '✅ Admin',
+                notifications: '📧 Notifications',
+                inventory: '📦 Inventory',
+                users: '👥 Users',
+                logout: '🚪 Logout',
+                login: '🔐 Login',
+                welcome: '🏰 Welcome',
+                loginSubtitle: 'Sign in to the Reservation System',
+                email: '📧 Email Address',
+                password: '🔐 Password',
+                submitLogin: '🔓 Enter',
+                emailPlaceholder: 'you@example.com',
+                passwordPlaceholder: 'Your password',
+                footer: '✨ Salon Social - Reservation System 2024',
+                'siteCopyright': 'Salon Social System © 2024',
+                'dashboardStatsTitle': '📊 Reservation Status',
+                'upcomingReservationsTitle': '🚨 Upcoming Reservations (Traffic Light)',
+                'noUpcoming': '😴 Nothing coming up right now.',
+                'date': '📆 Date',
+                'requester': '👤 Requester',
+                'status': '✅ Status',
+                'semaphore': '⏱️ Traffic Light',
+                'newReservationTitle': '📅 New Reservation',
+                'eventDate': '📆 Event Date',
+                'startTime': '🕐 Start Time',
+                'endTime': '🕑 End Time',
+                'eventTitle': '🎯 Event Title',
+                'attendees': '👥 Number of Attendees',
+                'bookButton': '✅ Book',
+                'myReservationsTitle': '📋 My Reservations',
+                'inventoryTitle': 'Inventory',
+                'createItemTitle': 'Create Item',
+                'nameLabel': 'Name',
+                'unitLabel': 'Unit',
+                'notesLabel': 'Notes',
+                'saveButton': 'Save',
+                'movementTitle': 'Movement',
+                'itemLabel': 'Item',
+                'quantityLabel': 'Quantity',
+                'typeLabel': 'Type',
+                'reasonLabel': 'Reason',
+                'registerButton': 'Register',
+                'recentMovementsTitle': 'Recent Movements',
+                'item': 'Item',
+                'qty': 'Qty',
+                'user': 'User',
+                'entry': 'Entry',
+                'exit': 'Exit',
+                'usersSystemTitle': '👥 System Users',
+                'rol': 'Role',
+                'state': 'Status',
+                'action': 'Action',
+                'createUserTitle': '➕ Create User',
+                'fullName': '👤 Full Name',
+                'roleLabel': '🎭 Role',
+                'createUserButton': '✅ Create User',
+                'resident': '👤 Resident',
+                'supervisor': '⭐ Supervisor',
+                'adminRole': '👑 Admin',
+                'active': '✓ Active',
+                'inactive': '✗ Inactive',
+                'channelSelect': '📡 Select channel:',
+                'helpText': 'From here you can send notifications to users about their reservations through multiple channels:',
+                'emailOption': '📧 Email',
+                'whatsappOption': '💬 WhatsApp',
+                'smsOption': '📞 SMS',
+                'notificationsCenterTitle': '🔔 Notifications Center',
+                'reservationsCount': 'Reservations',
+                'confirmAction': '📧 Confirmation',
+                'approvalAction': '✅ Approved',
+                'rejectionAction': '❌ Rejected',
+                'noNotifications': 'No reservations to notify.',
+                'downloadCsv': '📊 Download CSV Report',
+                'approveReservationsTitle': '✅ Approve Reservations',
+                'actions': '⚙️ Actions'
             }
         };
 
@@ -54,6 +210,7 @@ class SettingsPanel {
         this.applySettings();
         this.createPanel();
         this.attachListeners();
+        this.translatePage();
     }
 
     createPanel() {
@@ -156,9 +313,16 @@ class SettingsPanel {
     setLanguage(lang) {
         this.lang = lang;
         localStorage.setItem('salon_lang', lang);
+        this.setCookie('salon_lang', lang, 365);
         this.updatePanelLanguage();
+        this.translatePage();
         this.updateButtonState('.lang-btn', lang);
         this.playNotificationSound();
+    }
+
+    setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
     }
 
     setTextSize(size) {
@@ -222,6 +386,29 @@ class SettingsPanel {
             btn.textContent = `${btn.dataset.theme === 'dark' ? '🌙' : '☀️'} ${this.t(btn.dataset.theme)}`;
         });
         document.documentElement.lang = this.lang;
+    }
+
+    translatePage() {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            const text = this.translations[this.lang] ? this.translations[this.lang][key] : undefined;
+            if (text === undefined) {
+                return;
+            }
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
+                el.value = text;
+            } else {
+                el.textContent = text;
+            }
+        });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            el.placeholder = this.t(el.dataset.i18nPlaceholder);
+        });
+
+        document.querySelectorAll('[data-i18n-title]').forEach(el => {
+            el.title = this.t(el.dataset.i18nTitle);
+        });
     }
 
     applySettings() {

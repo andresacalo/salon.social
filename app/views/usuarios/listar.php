@@ -1,13 +1,13 @@
 ﻿<section class="grid" style="grid-template-columns: 1fr;">
   <div class="card">
-    <h2>👥 Usuarios del Sistema</h2>
+    <h2 data-i18n="usersSystemTitle"><?php echo htmlspecialchars(t('usersSystemTitle')); ?></h2>
     <table class="table">
       <tr>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Rol</th>
-        <th>Estado</th>
-        <th>Acción</th>
+        <th data-i18n="name"><?php echo htmlspecialchars(t('name')); ?></th>
+        <th data-i18n="email"><?php echo htmlspecialchars(t('email')); ?></th>
+        <th data-i18n="rol"><?php echo htmlspecialchars(t('rol')); ?></th>
+        <th data-i18n="state"><?php echo htmlspecialchars(t('state')); ?></th>
+        <th data-i18n="action"><?php echo htmlspecialchars(t('action')); ?></th>
       </tr>
       <?php foreach ($usuarios as $u): ?>
       <tr>
@@ -18,11 +18,11 @@
             $rol_badge = $u['role'] === 'admin' ? 'danger' : ($u['role'] === 'supervisor' ? 'warn' : 'success');
             $rol_icon = $u['role'] === 'admin' ? '👑' : ($u['role'] === 'supervisor' ? '⭐' : '👤');
           ?>
-          <span class="badge <?php echo $rol_badge; ?>"><?php echo $rol_icon; ?> <?php echo ucfirst($u['role']); ?></span>
+          <span class="badge <?php echo $rol_badge; ?>"><?php echo $rol_icon; ?> <?php echo htmlspecialchars(t_role($u['role'])); ?></span>
         </td>
         <td>
           <span class="semaforo <?php echo $u['active'] ? 'verde' : 'rojo'; ?>">
-            <?php echo $u['active'] ? '✓ Activo' : '✗ Inactivo'; ?>
+            <?php echo htmlspecialchars(t($u['active'] ? 'active' : 'inactive')); ?>
           </span>
         </td>
         <td>
@@ -30,7 +30,7 @@
                 <input type="hidden" name="id" value="<?php echo $u['id']; ?>">
                 <input type="hidden" name="active" value="<?php echo $u['active'] ? 0 : 1; ?>">
                 <button type="submit" class="action-btn">
-                  <?php echo $u['active'] ? '🔴 Desactivar' : '🟢 Activar'; ?>
+                  <?php echo $u['active'] ? '🔴 ' . htmlspecialchars(t('rejectButton')) : '🟢 ' . htmlspecialchars(t('approveButton')); ?>
                 </button>
             </form>
         </td>
@@ -42,25 +42,25 @@
 
 <section class="grid" style="grid-template-columns: 1fr; margin-top: 60px;">
   <div class="card">
-    <h2>➕ Crear Usuario</h2>
+    <h2 data-i18n="createUserTitle"><?php echo htmlspecialchars(t('createUserTitle')); ?></h2>
     <form method="post" action="<?php echo route_to('usuarios_crear'); ?>">
-      <label>👤 Nombre Completo</label>
-      <input name="name" required placeholder="Ej: Juan Pérez">
+      <label><?php echo htmlspecialchars(t('fullName')); ?></label>
+      <input name="name" required placeholder="<?php echo htmlspecialchars(t('fullName')); ?>">
       
-      <label>📧 Correo Electrónico</label>
-      <input type="email" name="email" required placeholder="correo@ejemplo.com">
+      <label><?php echo htmlspecialchars(t('email')); ?></label>
+      <input type="email" name="email" required placeholder="<?php echo htmlspecialchars(t('emailPlaceholder')); ?>">
       
-      <label>🎭 Rol</label>
+      <label><?php echo htmlspecialchars(t('roleLabel')); ?></label>
       <select name="role">
-        <option value="residente">👤 Residente</option>
-        <option value="supervisor">⭐ Supervisor</option>
-        <option value="admin">👑 Admin</option>
+        <option value="residente"><?php echo htmlspecialchars(t('resident')); ?></option>
+        <option value="supervisor"><?php echo htmlspecialchars(t('supervisor')); ?></option>
+        <option value="admin"><?php echo htmlspecialchars(t('adminRole')); ?></option>
       </select>
       
-      <label>🔐 Contraseña</label>
-      <input type="password" name="password" required placeholder="Mínimo 8 caracteres">
+      <label><?php echo htmlspecialchars(t('password')); ?></label>
+      <input type="password" name="password" required placeholder="<?php echo htmlspecialchars(t('passwordPlaceholder')); ?>">
       
-      <button type="submit">✅ Crear Usuario</button>
+      <button type="submit"><?php echo htmlspecialchars(t('createUserButton')); ?></button>
     </form>
   </div>
 </section>
