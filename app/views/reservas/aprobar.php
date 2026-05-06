@@ -66,6 +66,8 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('Script loaded - status change functionality initializing');
+  
   // Filter by status
   document.querySelectorAll('.status-btn').forEach(btn => {
     btn.addEventListener('click', function() {
@@ -93,28 +95,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Change status
   document.querySelectorAll('.estado-select').forEach(select => {
-    select.addEventListener('change', function() {
+    select.addEventListener('change', function(e) {
       const id = this.dataset.id;
       const newStatus = this.value;
-      const originalStatus = this.dataset.originalStatus;
+      
+      console.log('Estado cambió - ID:', id, 'Nuevo Estado:', newStatus);
       
       // Create form and submit
       const form = document.createElement('form');
       form.method = 'POST';
-      form.action = '<?php echo route_to('reservas_cambiar_estado'); ?>';
+      form.action = '/?r=reservas_estado';
       
       const idInput = document.createElement('input');
       idInput.type = 'hidden';
       idInput.name = 'id';
       idInput.value = id;
+      form.appendChild(idInput);
       
       const statusInput = document.createElement('input');
       statusInput.type = 'hidden';
       statusInput.name = 'status';
       statusInput.value = newStatus;
-      
-      form.appendChild(idInput);
       form.appendChild(statusInput);
+      
+      console.log('Enviando formulario a:', form.action);
       document.body.appendChild(form);
       form.submit();
     });
@@ -124,17 +128,20 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.btn-delete').forEach(btn => {
     btn.addEventListener('click', function() {
       const id = this.dataset.id;
+      console.log('Eliminar ID:', id);
+      
       if (confirm('¿Estás seguro de que deseas eliminar esta reserva?')) {
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = '<?php echo route_to('reservas_eliminar'); ?>';
+        form.action = '/?r=reservas_eliminar';
         
         const idInput = document.createElement('input');
         idInput.type = 'hidden';
         idInput.name = 'id';
         idInput.value = id;
-        
         form.appendChild(idInput);
+        
+        console.log('Enviando eliminar a:', form.action);
         document.body.appendChild(form);
         form.submit();
       }
