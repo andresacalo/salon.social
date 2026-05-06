@@ -49,6 +49,14 @@ class Reserva
         $stmt->execute();
     }
 
+    public static function delete(int $id): void
+    {
+        $db = Conexion::get();
+        $stmt = $db->prepare('DELETE FROM reservas WHERE id=?');
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+    }
+
     public static function forUser(int $userId): array
     {
         $stmt = Conexion::get()->prepare('SELECT * FROM reservas WHERE usuario_id=? ORDER BY fecha_evento DESC');

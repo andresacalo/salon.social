@@ -72,6 +72,18 @@ class ReservaController
         header('Location: ' . route_to('admin_reservas'));
     }
 
+    public function eliminar(): void
+    {
+        $this->requireRole(['admin']);
+        
+        $id = (int)$_POST['id'];
+        
+        Reserva::delete($id);
+        $_SESSION['flash'] = ['type'=>'success','message'=>'Reserva eliminada correctamente'];
+        
+        header('Location: ' . route_to('admin_reservas'));
+    }
+
     private function requireLogin(): void
     {
         if (!isset($_SESSION['user'])) { header('Location: ' . route_to('login')); exit; }
