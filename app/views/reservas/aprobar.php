@@ -93,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  const statusAction = '<?php echo route_to('reservas_estado'); ?>';
+  const deleteAction = '<?php echo route_to('reservas_eliminar'); ?>';
+
   // Change status
   document.querySelectorAll('.estado-select').forEach(select => {
     select.addEventListener('change', function(e) {
@@ -104,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Create form and submit
       const form = document.createElement('form');
       form.method = 'POST';
-      form.action = '/?r=reservas_estado';
+      form.action = statusAction;
       
       const idInput = document.createElement('input');
       idInput.type = 'hidden';
@@ -133,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (confirm('¿Estás seguro de que deseas eliminar esta reserva?')) {
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = '/?r=reservas_eliminar';
+        form.action = deleteAction;
         
         const idInput = document.createElement('input');
         idInput.type = 'hidden';

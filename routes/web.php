@@ -15,7 +15,7 @@ return [
     'inventario_crear' => ['post' => ['InventarioController','crearItem'], 'role' => ['admin','supervisor']],
     'inventario_mov' => ['post' => ['InventarioController','movimiento'], 'role' => ['admin','supervisor']],
     'usuarios' => ['view' => 'usuarios/listar', 'role' => ['admin']],
-    'usuarios_crear' => ['post' => ['UsuarioController','cre'], 'role' => ['admin']],
+    'usuarios_crear' => ['post' => ['UsuarioController','crear'], 'role' => ['admin']],
     'usuarios_toggle' => ['post' => ['UsuarioController','toggle'], 'role' => ['admin']],
     'notificaciones' => ['get' => ['NotificacionesController','index'], 'role' => ['admin']],
     'notificaciones_enviar' => ['post' => ['NotificacionesController','enviar'], 'role' => ['admin']],
