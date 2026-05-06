@@ -91,30 +91,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Change status
+  // Change status - Using traditional form submission for reliability
   document.querySelectorAll('.estado-select').forEach(select => {
+    // Store original value
+    select.dataset.originalStatus = select.value;
+    
     select.addEventListener('change', function() {
       const id = this.dataset.id;
       const newStatus = this.value;
       const originalStatus = this.dataset.originalStatus;
       
-      // Create form and submit
+      // Create and submit form directly
       const form = document.createElement('form');
+      form.style.display = 'none';
       form.method = 'POST';
-      form.action = '<?php echo route_to('reservas_cambiar_estado'); ?>';
+      form.action = window.location.pathname + '?r=reservas_estado';
       
       const idInput = document.createElement('input');
-      idInput.type = 'hidden';
       idInput.name = 'id';
       idInput.value = id;
+      form.appendChild(idInput);
       
       const statusInput = document.createElement('input');
-      statusInput.type = 'hidden';
       statusInput.name = 'status';
       statusInput.value = newStatus;
-      
-      form.appendChild(idInput);
       form.appendChild(statusInput);
+      
       document.body.appendChild(form);
       form.submit();
     });
@@ -126,15 +128,15 @@ document.addEventListener('DOMContentLoaded', function() {
       const id = this.dataset.id;
       if (confirm('¿Estás seguro de que deseas eliminar esta reserva?')) {
         const form = document.createElement('form');
+        form.style.display = 'none';
         form.method = 'POST';
-        form.action = '<?php echo route_to('reservas_eliminar'); ?>';
+        form.action = window.location.pathname + '?r=reservas_eliminar';
         
         const idInput = document.createElement('input');
-        idInput.type = 'hidden';
         idInput.name = 'id';
         idInput.value = id;
-        
         form.appendChild(idInput);
+        
         document.body.appendChild(form);
         form.submit();
       }
